@@ -7,18 +7,9 @@
 
   environment.systemPackages = with pkgs; [
   	vim
-	tmux
   	wget
-  	git
-  	stow
-  	lf
   	htop
 	distrobox	
-
-   	gnome-software
-	ptyxis
-  	adwaita-icon-theme
-	gnome-themes-extra
   ];
 
   fonts.packages = with pkgs; [ hack-font ];
@@ -37,13 +28,6 @@
   environment.shellAliases = {
 	update = "sh -c /home/babu/.config/nixos/update.sh";
 	update-commit = "sh -c /home/babu/.config/nixos/update-commit.sh";
-  };
-  
-  services.flatpak.enable = true;
-
-  environment.sessionVariables = rec {
-	TERM = "ptyxis";
-	EDITOR = "vim";
   };
 
   services.xserver = {
@@ -67,7 +51,7 @@
     # gnome-calculator
     # gnome-calendar
     gnome-characters
-    gnome-console
+    # gnome-console
     gnome-contacts
     gnome-font-viewer
     gnome-logs
