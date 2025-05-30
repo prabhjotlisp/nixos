@@ -10,6 +10,7 @@
   	wget
   	htop
 	distrobox	
+	gnome-backgrounds
   ];
 
   fonts.packages = with pkgs; [ hack-font ];
