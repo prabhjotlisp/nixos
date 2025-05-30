@@ -33,6 +33,11 @@
   ###############
   ### System ####
   ###############
+
+  environment.shellAliases = {
+	update = "sh -c /home/babu/.config/nixos/update.sh";
+	update-commit = "sh -c /home/babu/.config/nixos/update-commit.sh";
+  };
   
   services.flatpak.enable = true;
 
