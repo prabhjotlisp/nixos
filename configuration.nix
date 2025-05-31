@@ -38,34 +38,34 @@
 	excludePackages = [ pkgs.xterm ];
   };
 
-  # programs.dconf = {
-  #   enable = true;
-  #   profiles.user.databases = [
-  #     {
-  #       lockAll = true; # prevents overriding
-  #       settings = {
-  #         "org/gnome/desktop/interface" = {
-  #           clock-format = "12h";
-  #           show-battery-percentage = true;
-  #           color-scheme = "prefer-dark";
-  #           accent-color = "red";
-  #         };
-  #         "org/gnome/settings-daemon/plugins/power" = {
-  #           sleep-inactive-ac-type = "nothing";
-  #           sleep-inactive-battery-type = "nothing";
-  #         };
-  #         "org/gnome/desktop/wm/keybindings" = {
-  #           move-to-workspace-left = "['<Shift><Super>u']";
-  #           move-to-workspace-right = "['<Shift><Super>i']";
-  #           switch-to-workspace-left = "['<Super>u']";
-  #           switch-to-workspace-right = "['<Super>i']";
-  #           toggle-fullscreen = "['<Super>f']";
-  #           toggle-maximized = "['<Super>space']";
-  #         };
-  #       };
-  #     }
-  #   ];
-  # };
+  programs.dconf = {
+    enable = true;
+    profiles.user.databases = [
+      {
+        lockAll = true; # prevents overriding
+        settings = {
+          "org/gnome/desktop/interface" = {
+            clock-format = "12h";
+            show-battery-percentage = true;
+            # color-scheme = "prefer-dark";
+            # accent-color = "red";
+          };
+          "org/gnome/settings-daemon/plugins/power" = {
+            sleep-inactive-ac-type = "nothing";
+            sleep-inactive-battery-type = "nothing";
+          };
+          # "org/gnome/desktop/wm/keybindings" = {
+          #   move-to-workspace-left = "['<Shift><Super>u']";
+          #   move-to-workspace-right = "['<Shift><Super>i']";
+          #   switch-to-workspace-left = "['<Super>u']";
+          #   switch-to-workspace-right = "['<Super>i']";
+          #   toggle-fullscreen = "['<Super>f']";
+          #   toggle-maximized = "['<Super>space']";
+          # };
+        };
+      }
+    ];
+  };
 
   environment.gnome.excludePackages = with pkgs; [
     orca
