@@ -6,11 +6,10 @@
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
-  	vim
-  	wget
-  	htop
-	distrobox	
-	gnome-backgrounds
+  	vim git wget
+  	htop lf
+  	distrobox	
+  	gnome-backgrounds
   ];
 
   fonts.packages = with pkgs; [ hack-font ];
@@ -29,6 +28,7 @@
   environment.shellAliases = {
 	update = "sh -c /home/babu/.config/nixos/update.sh";
 	update-commit = "sh -c /home/babu/.config/nixos/update-commit.sh";
+	edit = "gnome-text-editor";
   };
 
   services.xserver = {
@@ -44,12 +44,12 @@
       {
         lockAll = true; # prevents overriding
         settings = {
-          "org/gnome/desktop/interface" = {
-            clock-format = "12h";
-            show-battery-percentage = true;
+          # "org/gnome/desktop/interface" = {
+            # clock-format = "12h";
+            # show-battery-percentage = true;
             # color-scheme = "prefer-dark";
             # accent-color = "red";
-          };
+          # };
           "org/gnome/settings-daemon/plugins/power" = {
             sleep-inactive-ac-type = "nothing";
             sleep-inactive-battery-type = "nothing";
